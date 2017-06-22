@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 
+
 const ClientCreationComponent = React.createClass({
 
     getInitialState: function () {
-        return { firstName: '', lastName: '' };
+        return { firstName: '', lastName: '', birthDate: '', phoneNumber: '', clientType: '' };
     },
 
     handleFirstNameChange: function (event) {
@@ -73,7 +74,13 @@ const ClientCreationComponent = React.createClass({
                         </div>
 
                         <div className="form-group">
-                            <input className="btn btn-primary" id="registerBtn" type="button" value="Register" onClick={this.registerClient} />
+                            <input className="btn btn-primary" id="registerBtn" type="button" 
+                            disabled={this.state.firstName === '' || 
+                            this.state.lastName === '' || 
+                            this.state.birthDate === ''|| 
+                            this.state.phoneNumber === '' || 
+                            this.state.clientType === ''} 
+                            value="Register" onClick={this.registerClient} />
                         </div>
                     </fieldset>
                 </form>

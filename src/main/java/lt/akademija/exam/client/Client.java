@@ -1,33 +1,34 @@
 package lt.akademija.exam.client;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 
 /**
- * @author ggrazevicius
+ * Client object
  */
 @Entity
 @NamedQueries({ @NamedQuery(name = "findAllClients", query = "select client from Client client") })
-@Table(name="clients")
 public class Client {
 
 	@Id
 	@GeneratedValue
 	private Long id;
 
-//	@NotNull
+	@NotBlank
 	private String firstName;
 
-//	@NotNull
+	@NotBlank	
 	private String lastName;
 
-//	@NotNull
+	@NotBlank
 	private String birthDate;
 
-//	@NotNull
+	@NotBlank
 	private String phoneNumber;
 
-//	@NotNull
+	@NotBlank
 	private String clientType;
 
 	public Client() {
