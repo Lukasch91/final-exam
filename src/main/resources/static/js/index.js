@@ -9272,9 +9272,13 @@ var NewItemRegisterComponent = _react2.default.createClass({
                     'fieldset',
                     null,
                     _react2.default.createElement(
-                        'legend',
+                        'h2',
                         null,
-                        'Register a Item'
+                        _react2.default.createElement(
+                            'label',
+                            null,
+                            'Register item'
+                        )
                     ),
                     _react2.default.createElement(
                         'div',
@@ -14961,9 +14965,13 @@ var ClientCreationComponent = _react2.default.createClass({
                     'fieldset',
                     null,
                     _react2.default.createElement(
-                        'legend',
+                        'h2',
                         null,
-                        'Register a client'
+                        _react2.default.createElement(
+                            'label',
+                            null,
+                            'Register new client'
+                        )
                     ),
                     _react2.default.createElement(
                         'div',
@@ -15080,81 +15088,94 @@ var ClientTableComponent = _react2.default.createClass({
 
     render: function render() {
         return _react2.default.createElement(
-            'table',
-            { className: 'table' },
+            'div',
+            null,
             _react2.default.createElement(
-                'thead',
+                'h2',
                 null,
                 _react2.default.createElement(
-                    'tr',
+                    'label',
                     null,
-                    _react2.default.createElement(
-                        'th',
-                        null,
-                        'First Name'
-                    ),
-                    _react2.default.createElement(
-                        'th',
-                        null,
-                        'Last Name'
-                    ),
-                    _react2.default.createElement(
-                        'th',
-                        null,
-                        'Birth date'
-                    ),
-                    _react2.default.createElement(
-                        'th',
-                        null,
-                        'Phone number'
-                    ),
-                    _react2.default.createElement(
-                        'th',
-                        null,
-                        'Client type'
-                    )
+                    'List of clients'
                 )
             ),
             _react2.default.createElement(
-                'tbody',
-                null,
-                this.state.clients.map(function (client) {
-                    return _react2.default.createElement(
+                'table',
+                { className: 'table' },
+                _react2.default.createElement(
+                    'thead',
+                    null,
+                    _react2.default.createElement(
                         'tr',
-                        { key: client.id },
+                        null,
                         _react2.default.createElement(
-                            'td',
+                            'th',
                             null,
-                            client.firstName
+                            'First Name'
                         ),
                         _react2.default.createElement(
-                            'td',
+                            'th',
                             null,
-                            client.lastName
+                            'Last Name'
                         ),
                         _react2.default.createElement(
-                            'td',
+                            'th',
                             null,
-                            client.birthDate
+                            'Birth date'
                         ),
                         _react2.default.createElement(
-                            'td',
+                            'th',
                             null,
-                            client.phoneNumber
+                            'Phone number'
                         ),
                         _react2.default.createElement(
-                            'td',
+                            'th',
                             null,
-                            client.clientType
-                        ),
-                        _react2.default.createElement(
-                            'td',
-                            null,
-                            _react2.default.createElement('input', { className: 'btn btn-primary', id: 'registerBtn', type: 'button', value: 'Register'
-                            })
+                            'Client type'
                         )
-                    );
-                })
+                    )
+                ),
+                _react2.default.createElement(
+                    'tbody',
+                    null,
+                    this.state.clients.map(function (client) {
+                        return _react2.default.createElement(
+                            'tr',
+                            { key: client.id },
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                client.firstName
+                            ),
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                client.lastName
+                            ),
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                client.birthDate
+                            ),
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                client.phoneNumber
+                            ),
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                client.clientType
+                            ),
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                _react2.default.createElement('input', { className: 'btn btn-primary', id: 'registerBtn', type: 'button', value: 'Register'
+                                })
+                            )
+                        );
+                    })
+                )
             )
         );
     }

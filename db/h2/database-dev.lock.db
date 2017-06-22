@@ -1,0 +1,6 @@
+#FileLock
+#Thu Jun 22 13:49:22 EEST 2017
+hostName=AK-04
+id=15ccf6bb194be0437f3d348f94e8b334bd893a16c39
+method=file
+server=192.168.56.1\:61701

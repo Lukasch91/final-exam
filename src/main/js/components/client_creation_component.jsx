@@ -47,7 +47,8 @@ const ClientCreationComponent = React.createClass({
             <div>
                 <form>
                     <fieldset>
-                        <legend>Register a client</legend>
+                        <h2><label>Register new client</label></h2>
+
                         <div className="form-group">
                             <label htmlFor="firstName">First Name:</label>
                             <input className="form-control" id="firstName" name="firstName" value={this.props.firstName} onChange={this.handleFirstNameChange} />
@@ -74,13 +75,13 @@ const ClientCreationComponent = React.createClass({
                         </div>
 
                         <div className="form-group">
-                            <input className="btn btn-primary" id="registerBtn" type="button" 
-                            disabled={this.state.firstName === '' || 
-                            this.state.lastName === '' || 
-                            this.state.birthDate === ''|| 
-                            this.state.phoneNumber === '' || 
-                            this.state.clientType === ''} 
-                            value="Register" onClick={this.registerClient} />
+                            <input className="btn btn-primary" id="registerBtn" type="button"
+                                disabled={this.state.firstName === '' ||
+                                    this.state.lastName === '' ||
+                                    this.state.birthDate === '' ||
+                                    this.state.phoneNumber === '' ||
+                                    this.state.clientType === ''}
+                                value="Register" onClick={this.registerClient} />
                         </div>
                     </fieldset>
                 </form>

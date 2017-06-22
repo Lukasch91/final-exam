@@ -1,9 +1,12 @@
 package lt.akademija.exam.client;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+import lt.akademija.exam.item.Item;
 
 /**
  * Client object
@@ -19,7 +22,7 @@ public class Client {
 	@NotBlank
 	private String firstName;
 
-	@NotBlank	
+	@NotBlank
 	private String lastName;
 
 	@NotBlank
@@ -31,7 +34,18 @@ public class Client {
 	@NotBlank
 	private String clientType;
 
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Item> itemList;
+
 	public Client() {
+	}
+
+	public List<Item> getItemList() {
+		return itemList;
+	}
+
+	public void setItemList(List<Item> itemList) {
+		this.itemList = itemList;
 	}
 
 	public String getBirthDate() {
