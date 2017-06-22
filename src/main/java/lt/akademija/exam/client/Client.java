@@ -1,48 +1,83 @@
 package lt.akademija.exam.client;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author ggrazevicius
  */
 @Entity
-@NamedQueries({
-        @NamedQuery(name = "findAllClients", query = "select client from Client client")
-})
+@NamedQueries({ @NamedQuery(name = "findAllClients", query = "select client from Client client") })
+@Table(name="clients")
 public class Client {
 
-    @Id
-    @GeneratedValue
-    private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    private String firstName;
+//	@NotNull
+	private String firstName;
 
-    private String lastName;
+//	@NotNull
+	private String lastName;
 
-    public Client() {
-    }
+//	@NotNull
+	private String birthDate;
 
-    public Long getId() {
-        return id;
-    }
+//	@NotNull
+	private String phoneNumber;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+//	@NotNull
+	private String clientType;
 
-    public String getFirstName() {
-        return firstName;
-    }
+	public Client() {
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	public String getBirthDate() {
+		return birthDate;
+	}
 
-    public String getLastName() {
-        return lastName;
-    }
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getClientType() {
+		return clientType;
+	}
+
+	public void setClientType(String clientType) {
+		this.clientType = clientType;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 }

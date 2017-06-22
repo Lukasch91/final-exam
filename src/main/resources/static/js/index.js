@@ -14791,10 +14791,25 @@ var ClientCreationComponent = _react2.default.createClass({
         this.setState({ lastName: event.target.value });
     },
 
+    handleBirthDateChange: function handleBirthDateChange(event) {
+        this.setState({ birthDate: event.target.value });
+    },
+
+    handlePhoneNumberChange: function handlePhoneNumberChange(event) {
+        this.setState({ phoneNumber: event.target.value });
+    },
+
+    handleClientTypeChange: function handleClientTypeChange(event) {
+        this.setState({ clientType: event.target.value });
+    },
+
     registerClient: function registerClient() {
         _axios2.default.post('http://localhost:8080/api/clients', {
             firstName: this.state.firstName,
-            lastName: this.state.lastName
+            lastName: this.state.lastName,
+            birthDate: this.state.birthDate,
+            phoneNumber: this.state.phoneNumber,
+            clientType: this.state.clientType
         }).then(function (result) {
             return window.location = "#/";
         });
@@ -14821,7 +14836,7 @@ var ClientCreationComponent = _react2.default.createClass({
                         _react2.default.createElement(
                             'label',
                             { htmlFor: 'firstName' },
-                            'First Name'
+                            'First Name:'
                         ),
                         _react2.default.createElement('input', { className: 'form-control', id: 'firstName', name: 'firstName', value: this.props.firstName, onChange: this.handleFirstNameChange })
                     ),
@@ -14831,9 +14846,39 @@ var ClientCreationComponent = _react2.default.createClass({
                         _react2.default.createElement(
                             'label',
                             { htmlFor: 'lastName' },
-                            'Last Name'
+                            'Last Name: '
                         ),
                         _react2.default.createElement('input', { className: 'form-control', id: 'lastName', name: 'lastName', value: this.props.lastName, onChange: this.handleLastNameChange })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'form-group' },
+                        _react2.default.createElement(
+                            'label',
+                            { htmlFor: 'birthDate' },
+                            'Birthday:'
+                        ),
+                        _react2.default.createElement('input', { className: 'form-control', id: 'birthDate', name: 'birthDate', value: this.props.birthDate, onChange: this.handleBirthDateChange })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'form-group' },
+                        _react2.default.createElement(
+                            'label',
+                            { htmlFor: 'phoneNumber' },
+                            'Phone number: '
+                        ),
+                        _react2.default.createElement('input', { className: 'form-control', id: 'phoneNumber', name: 'phoneNumber', value: this.props.phoneNumber, onChange: this.handlePhoneNumberChange })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'form-group' },
+                        _react2.default.createElement(
+                            'label',
+                            { htmlFor: 'clientType' },
+                            'Client type: '
+                        ),
+                        _react2.default.createElement('input', { className: 'form-control', id: 'clientType', name: 'clientType', value: this.props.clientType, onChange: this.handleClientTypeChange })
                     ),
                     _react2.default.createElement(
                         'div',
@@ -14911,6 +14956,21 @@ var ClientTableComponent = _react2.default.createClass({
                         'th',
                         null,
                         'Last Name'
+                    ),
+                    _react2.default.createElement(
+                        'th',
+                        null,
+                        'Birth date'
+                    ),
+                    _react2.default.createElement(
+                        'th',
+                        null,
+                        'Phone number'
+                    ),
+                    _react2.default.createElement(
+                        'th',
+                        null,
+                        'Client type'
                     )
                 )
             ),
@@ -14930,6 +14990,21 @@ var ClientTableComponent = _react2.default.createClass({
                             'td',
                             null,
                             client.lastName
+                        ),
+                        _react2.default.createElement(
+                            'td',
+                            null,
+                            client.birthDate
+                        ),
+                        _react2.default.createElement(
+                            'td',
+                            null,
+                            client.phoneNumber
+                        ),
+                        _react2.default.createElement(
+                            'td',
+                            null,
+                            client.clientType
                         )
                     );
                 })

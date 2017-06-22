@@ -12,6 +12,9 @@ public class ClientController {
     @Autowired
     private ClientRepository clientRepository;
 
+    @Autowired 
+    private ClientService clientService;
+    
     @GetMapping("/api/clients")
     @ApiOperation(value = "Returns all flights that are currently in the list")
     public List<Client> getClients() {
@@ -25,6 +28,6 @@ public class ClientController {
 
     @PostMapping("/api/clients")
     public Client registerClient(@RequestBody Client client) {
-        return clientRepository.save(client);
+        return clientService.saveClient(client);
     }
 }
